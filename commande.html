@@ -1,0 +1,27 @@
+<!doctype html>
+<html>
+<head>
+<title>Commande de pièces</title>
+<link rel='stylesheet' type='text/css' href='{{ url_for("static", filename="style.css") }}'>
+</head>
+<body>
+<div class='contenu'>
+	<a href='/'>Retour à l'accueil</a><br/><br/>
+	<h1>Commande de pièces</h1><br/>
+	{% if msg!="" %}<strong>{{ msg }}</strong><br/><br/>{% endif %}
+	
+	<label for='piece'>Pièce1  </label>
+	<label for='quantite'> |  Quantité :  </label><input type='number' name='quantite' value='{{ quantite }}'><br/>
+	
+	<label for='piece'>Pièce2  </label>
+	<label for='quantite'> |  Quantité :  </label><input type='number' name='quantite' value='{{ quantite }}'><br/>
+	
+	<label for='piece'>Pièce3  </label>
+	<label for='quantite'> |  Quantité :  </label><input type='number' name='quantite' value='{{ quantite }}'><br/><br/>
+			
+		</select>
+	<input type='submit' value='Valider'>
+	</form><br/>
+</div>
+</body>
+</html>

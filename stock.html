@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html>
+<title>Stock</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Rubik">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="css/stock.css">
+
+<style>
+body,h1,h2,h3,h4,h5,h6 {font-family: "Rubik", sans-serif}
+
+body,html {
+  height: 100%;
+  line-height: 1.8;
+}
+
+
+/* Full height image header */
+.bgimg-1 {
+  background-position: center;
+  background-size: cover;
+  background-image: url("lego.jpg");
+  min-height: 100%;
+} 
+
+.w3-bar .w3-button {
+  padding: 16px;
+ 
+}
+
+.lp_table {
+	display: table;
+	width: 100%;
+}
+.lp_entetes {
+	display: table-header-group;
+	background-color: #ddd;
+	font-weight: bold;
+}
+.lp_ligne {
+	display: table-row;
+}
+.lp_entete, .lp_cellule {
+	display: table-cell;
+	padding: 3px 10px;
+	border: 1px solid #999999;
+}
+</style>
+<body>
+
+
+
+<!-- Navbar (sit on top) -->
+<div class="w3-top">
+  <div class="w3-bar w3-grey w3-card" id="myNavbar">
+    <a href="{{url_for('Accueil')}}" class="w3-bar-item w3-button w3-wide">ACCUEIL</a>
+    <!-- Right-sided navbar links -->
+    <div class="w3-right w3-hide-small">
+      <a href="{{url_for('Agilean')}}" class="w3-bar-item w3-button">STOCK</a>
+      <a href="{{url_for('Agilog')}}" class="w3-bar-item w3-button">COMMANDE</a>
+      <a href="{{url_for('Client')}}" class="w3-bar-item w3-button">RECEPTION</a>
+    </div>
+  </div>
+</div>
+
+ 
+<!-- Header with full-height image -->
+<header class="bgimg-1 w3-display-container w3-grayscale-min" id="home">
+  <div class="w3-display-left w3-text-white" style="padding:48px">
+    <span class="w3-jumbo w3-hide-small">Stock</span><br>
+</header>
+
+<!-- Tableau --> 
+<br><br><br><br><br><br>
+{%block body%}
+<div class="w3-panel w3-white">
+	<div class = "lp_table">
+		<div class = "lp_table">
+			<div class = "lp_entetes">
+				<div class = "lp_entete">N° Piece</div>
+				<div class = "lp_entete">Nom de la pièce</div>
+				<div class = "lp_entete">Quantité</div>
+			</div>
+			{% for element in Stock %}
+				<div class = "lp_ligne">
+					<div class = "lp_cellule">{{ element['ID'] }}</div>
+					<div class = "lp_cellule">{{ element['Piece'] }}</div>
+					<div class = "lp_cellule">{{ element['Quantite'] }}</div>
+				</div>
+			{% endfor %}
+		</div>
+	</div>
+</div>
+{% endblock%}
+
+
+<!-- Interaction avec les utilisateurs agilog -->  
+
+<form action='{{url_for("Remplissement")}}' method='POST'>
+
+<fieldset>
+<legend><h3>Ajout de stock</h3></legend>
+
+Numéro de pièce : <br>
+
+<input type="number" name="id" min="1"><br>
+
+Quantité : <br>
+<input type="number" name="quantite" min="1"><br>
+<br>
+<input type="submit" name="valider">
+
+</fieldset>
+</form>
+
+
+ 
+
+ 
+
+ 
+
+
+<!-- Modal for full size images on click-->
+<div id="modal01" class="w3-modal w3-black" onclick="this.style.display='none'">
+  <span class="w3-button w3-xxlarge w3-black w3-padding-large w3-display-topright" title="Close Modal Image">×</span>
+  <div class="w3-modal-content w3-animate-zoom w3-center w3-transparent w3-padding-64">
+    <img id="img01" class="w3-image">
+    <p id="caption" class="w3-opacity w3-large"></p>
+  </div>
+</div>
+
+ 
+
+ 
+
+ 
+
+ 
+<script>
+// Modal Image Gallery
+function onClick(element) {
+  document.getElementById("img01").src = element.src;
+  document.getElementById("modal01").style.display = "block";
+  var captionText = document.getElementById("caption");
+  captionText.innerHTML = element.alt;
+}
+
+ 
+
+ 
+
+ 
+
+
+// Toggle between showing and hiding the sidebar when clicking the menu icon
+var mySidebar = document.getElementById("mySidebar");
+
+ 
+
+ 
+
+ 
+
+function w3_open() {
+  if (mySidebar.style.display === 'block') {
+    mySidebar.style.display = 'none';
+  } else {
+    mySidebar.style.display = 'block';
+  }
+}
+
+
+
+// Close the sidebar with the close button
+function w3_close() {
+    mySidebar.style.display = "none";
+}
+</script>
+
+
+</body>
+</html>

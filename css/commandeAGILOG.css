@@ -1,0 +1,22 @@
+.hero{
+	margin: 0;
+	font-family: system-ui;
+}
+
+body {
+	font-family: 'Open sans',sans-serif;
+	background-color: #074f57;
+	background-image: url("../images/pieces.jpg");
+	background-repeat: no-repeat;
+	background-size: 100% auto;
+	color: white;
+}
+
+.container{
+	max-width: 960px;
+	margin-left: auto;
+	margin-right: auto;
+	padding-left: 1rem;
+	padding-right: 1rem;
+}
+

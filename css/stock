@@ -1,0 +1,8 @@
+body {
+	font-family: 'Open sans',sans-serif;
+	background-color: #074f57;
+	background-image: url("../lego.jpg");
+	background-repeat: no-repeat;
+	background-size: 100%;
+	color: white;
+}

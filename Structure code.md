@@ -11,7 +11,7 @@ auteur:
 
 Fonction qui traite la commande et l'ajoute dans la base de donnée (création de la commande, des liens) -> fonction logique
 auteur: aurélien  
-état: presque bon
+état: fait
 ____________________________
 III) 
 

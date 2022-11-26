@@ -14,3 +14,8 @@ auteur: aurélien
 état: presque bon
 ____________________________
 III) 
+
+
+
+IV) Mise en  forme du code
+Regrouper les différentes fonctions pour rendre le code final conscit et lisible 

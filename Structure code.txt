@@ -13,7 +13,7 @@ Fonction qui traite la commande et l'ajoute dans la base de donnée (création d
 auteur: aurélien  
 état: fait
 ____________________________
-III) 
+III) Retrait des pièces dans les stocks
 
 
 

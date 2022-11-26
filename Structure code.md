@@ -6,8 +6,8 @@ auteur:
 ____________________________
 II) Traitement des commandes coté client
 Fonction qui récupère la commande depuis la page html -> FLASK
-auteur:
-état:
+auteur: aurélien
+état: j'ai commencé mais j'arrive pas à récuperer les pièces commandées sous forme de liste
 
 Fonction qui traite la commande et l'ajoute dans la base de donnée (création de la commande, des liens) -> fonction logique
 auteur: aurélien  

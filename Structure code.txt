@@ -19,3 +19,9 @@ III) Retrait des pièces dans les stocks
 
 IV) Mise en  forme du code
 Regrouper les différentes fonctions pour rendre le code final conscit et lisible 
+
+4 fichiers:
+fonction_pages   regroupe les différentes fonctions permettant d'intéragire avec les pages html (FLASK)
+fonctions_logiques  regroupe les différentes fonctions permettant d'intéragir avec la base de donnée et férifier l'états des commandes
+settings  regroupe les différentes conctantes qui reviennent souvent dans le code pour les changer rapidement
+main  est le code final qui fait interagir tous les fichiers précédents ensemble

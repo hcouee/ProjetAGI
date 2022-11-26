@@ -43,7 +43,7 @@ AUTRES FONCTIONS________________________________________________________________
 
 #récupération de la date
 def date():
-    date_row = str(datetime.datetime.now()).split(" ")
+    date_row = str(datetime.datetime.now()).split(".")
     date = date_row[0]
     return date
 

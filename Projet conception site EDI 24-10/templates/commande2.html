@@ -1,0 +1,35 @@
+<!doctype html>
+<html>
+<head>
+<title>Commande de pièces</title>
+<link rel='stylesheet' type='text/css' href='{{ url_for("static", filename="style.css") }}'>
+</head>
+<body>
+<div class='contenu'>
+	<a href='/'>Retour à l'accueil</a><br/><br/>
+	<h1>Commande de pièces</h1><br/>
+	{% if msg!="" %}<strong>{{ msg }}</strong><br/><br/>{% endif %}
+	<form method='post' action='{{ url_for("Commande") }}'>
+
+    <div class="lp_table">
+        <div class="lp_entetes">
+            <div class="lp_entete">ID</div>
+            <div class="lp_entete">Code Article</div>
+            <div class="lp_entete">Designation</div>
+            <div class="lp_entete">Sous-ensemble</div>
+        </div>
+        {% for piece in Pieces %}
+            <div class="lp_ligne">
+                <div class="lp_cellule">{{ piece['ID'] }}</div>
+                <div class="lp_cellule">{{ piece['Code_Art'] }}</div>
+                <div class="lp_cellule">{{ piece['Désignation'] }}</div>
+                <div class="lp_cellule">{{ piece['Sous_ensemble'] }}</div>
+				<label for='quantity'>  Quantité à commander :  </label><input type='number' name='quantity' value='{{ quantity }}'><br/>
+            </div>
+        {% endfor %}
+	<center><input type='submit' value='Valider la commande'></center>
+	</form><br/>
+    </div>
+</div>
+</body>
+</html>

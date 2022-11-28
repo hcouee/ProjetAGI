@@ -1,0 +1,70 @@
+<!doctype html>
+<html>
+<head>
+<style>
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
+}
+
+li {
+  float: left;
+  border-right:1px solid #bbb;
+}
+
+li:last-child {
+  border-right: none;
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+li a:hover:not(.active) {
+  background-color: #111;
+}
+
+.active {
+  background-color: #04AA6D;
+}
+</style>
+<title>Programmation web avec Flask</title>
+<link rel='stylesheet' type='text/css' href='{{ url_for("static", filename="style.css") }}'>
+</head>
+<body>
+
+<ul>
+  <li><a href='{{ url_for("affichage_bdd_stock") }}'>STOCK</a></li>
+  <li><a href='{{ url_for("commande") }}'>COMMANDES</a></li>
+  <li><a href='{{ url_for("reception") }}'>RECEPTION</a></li>
+  <li style="float:right"><a class="active">ABOUT</a></li>
+</ul>
+
+<div class='contenu'>
+	<a href='{{ url_for("index") }}'>Retour à l'Accueil</a><br/><br/>
+	<h1>Pièces en stock</h1><br/>
+	<div class="lp_table">
+		<div class="lp_entetes">
+			<div class="lp_entete">ID</div>
+			<div class="lp_entete">Pièce</div>
+			<div class="lp_entete">Quantité</div>
+		</div>
+		{% for pieces in Stock %}
+			<div class="lp_ligne">
+				<div class="lp_cellule">{{ pieces['ID'] }}</div>
+				<div class="lp_cellule">{{ pieces['Piece'] }}</div>
+				<div class="lp_cellule">{{ pieces['Quantite'] }}</div>
+			</div>
+		{% endfor %}
+	</div>
+</div>
+
+</body>
+</html>

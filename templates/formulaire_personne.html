@@ -1,0 +1,20 @@
+<!doctype html>
+<html>
+<head>
+<title>Programmation web avec Flask</title>
+<link rel='stylesheet' type='text/css' href='{{ url_for("static", filename="style.css") }}'>
+</head>
+<body>
+<div class='contenu'>
+	<a href='{{ url_for("index") }}'>Retour à l'Accueil</a><br/><br/>
+	<h1>Ajout dans le stock</h1><br/>
+	{% if msg!="" %}<strong>{{ msg }}</strong><br/><br/>{% endif %}
+	<form method='post' action='{{ url_for("insertion_bdd_piece_stock") }}'>
+	<label for='ID'>ID</label><input type='text' name='ID' value='{{ ID }}'>
+	<label for='Piece'>Désignation</label><input type='text' name='Piece' value='{{ Piece }}'>
+	<label for='Quantite'>Quantité</label><input type='INTEGER' name='Quantite' value='{{ Quantite }}'>
+	<input type='submit' value='ajouter'>
+	</form><br/>
+</div>
+</body>
+</html>
